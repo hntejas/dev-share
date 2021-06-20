@@ -82,12 +82,14 @@ export default function ProfilePage() {
               className={styles.displayImg}
               alt={profile.name}
             />
-            <div
-              className={styles.editHover}
-              onClick={() => setEditProfileImg(true)}
-            >
-              <HiPencil />
-            </div>
+            {!userId && (
+              <div
+                className={styles.editHover}
+                onClick={() => setEditProfileImg(true)}
+              >
+                <HiPencil />
+              </div>
+            )}
           </div>
           {!userId ? (
             <button
