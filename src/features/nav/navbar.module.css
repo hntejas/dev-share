@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 3rem;
+  background: white;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

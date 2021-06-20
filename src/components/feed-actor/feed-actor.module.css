@@ -1,0 +1,33 @@
+.feedActorCard {
+  display: flex;
+}
+
+.feedActorAvatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.feedActorDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.feedActorSubDetails {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  color: #0a66c2;
+}

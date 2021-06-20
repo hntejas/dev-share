@@ -1,0 +1,60 @@
+.container {
+  background: white;
+  max-width: 525px;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.postCtaBtn {
+  background: none;
+  border: 1px solid #00000026;
+  border-radius: 25px;
+  width: 100%;
+  color: #00000099;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.postCtaBtn:hover {
+  background: #00000014;
+  cursor: pointer;
+}
+
+.postActionBtn {
+  background: none;
+  display: flex;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.postActionBtn > span {
+  color: #00000099;
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+
+.postActionBtn > svg {
+  font-size: 1rem;
+  color: #0a66c2;
+}
+
+.postActionBtn:hover {
+  background: #00000014;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 0;
+  }
+}

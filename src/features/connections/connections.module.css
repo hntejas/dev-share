@@ -1,0 +1,67 @@
+.container {
+  min-width: 55vw;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  margin: 1rem;
+  min-height: 85vh;
+}
+
+.connectionheader {
+  display: flex;
+}
+
+.connectionTab {
+  width: 33.33%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.activeTab {
+  border-bottom: 4px solid green;
+  color: green;
+}
+
+.connectionCardContainer {
+  width: 180px;
+  max-width: 180px;
+  border-radius: 10px;
+  background: white;
+  height: max-content;
+  margin: 1rem 0.5rem;
+  overflow: hidden;
+  border: 1px solid lightgray;
+}
+
+.connectionBtn {
+  border: none;
+  background: none;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem auto;
+  background: #0a66c2;
+  color: white;
+  font-weight: 600;
+}
+
+.connectionBtn:hover {
+  background: #004182;
+  cursor: pointer;
+}
+
+.connectionTagline {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95vw;
+    max-width: unset;
+    margin: 0;
+  }
+}

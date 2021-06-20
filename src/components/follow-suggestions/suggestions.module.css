@@ -1,0 +1,41 @@
+.suggestionContainer {
+  width: calc(270px + 2rem);
+  background: white;
+  margin: 1rem 0;
+  border-radius: 10px;
+  height: max-content;
+  position: sticky;
+  top: 5rem;
+  padding-top: 0.5rem;
+}
+
+.suggestionItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  height: max-content;
+}
+
+.suggestionItem:hover {
+  background: #ebebeb;
+}
+
+.suggestionItem > div:nth-child(1) {
+  width: 75%;
+}
+
+.suggestionAction {
+  font-size: 0.95rem;
+  color: #0a66c2;
+}
+
+.suggestionAction:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .suggestionContainer {
+    display: none;
+  }
+}
