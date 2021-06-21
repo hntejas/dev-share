@@ -20,7 +20,7 @@ export default function PostPrompt({ openForm }: PostForm) {
         </button>
       </div>
       <div className={styles.flexWrapper}>
-        <button className={styles.postActionBtn}>
+        <button className={styles.postActionBtn} onClick={() => openForm()}>
           <HiPhotograph />
           <span>Photo</span>
         </button>
