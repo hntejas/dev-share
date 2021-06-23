@@ -10,7 +10,7 @@ import SignUp from "./features/auth/Signup";
 import PrivateRoute from "./utils/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppSelector, useAppDispatch } from "./app/hooks";
-import { selectAuth } from "./features/auth/authSlice";
+import { logoutUser, selectAuth } from "./features/auth/authSlice";
 import { useEffect, useState } from "react";
 import { loadUserAsync } from "./features/profile/profile.service";
 import { resetProfile } from "./features/profile/profileSlice";
@@ -26,14 +26,19 @@ function App() {
   const [openPostForm, setOpenPostForm] = useState(false);
 
   useEffect(() => {
-    if (auth.isLoggedIn) {
-      dispatch(loadUserAsync());
-      dispatch(loadUserConnectionsAsync());
-      dispatch(loadFeedAsync());
-    } else {
-      dispatch(resetProfile());
-      dispatch(resetConnection());
-    }
+    (async () => {
+      if (auth.isLoggedIn) {
+        const response = await dispatch(loadUserAsync());
+        if (response.payload.status === 401) {
+          dispatch(logoutUser());
+        }
+        dispatch(loadUserConnectionsAsync());
+        dispatch(loadFeedAsync());
+      } else {
+        dispatch(resetProfile());
+        dispatch(resetConnection());
+      }
+    })();
   }, [auth.isLoggedIn, dispatch]);
 
   return (
