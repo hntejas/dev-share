@@ -1,6 +1,3 @@
-import styles from "./post.module.css";
-import btnStyles from "../../components/post-prompt/post-prompt.module.css";
-import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
 import {
   useState,
   useRef,
@@ -8,14 +5,19 @@ import {
   MutableRefObject,
   SyntheticEvent,
 } from "react";
-import FeedActor from "../../components/feed-actor/FeedActor";
+import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
 import { HiPhotograph } from "react-icons/hi";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { submitPostSync } from "./post.service";
 import { selectPost } from "./postSlice";
-import { showToast } from "../../utils/helper";
 import { selectProfile } from "../profile/profileSlice";
-import { User } from "./Post";
+
+import FeedActor from "../../components/feed-actor/FeedActor";
+import { submitPostSync } from "./post.service";
+import { showToast } from "../../utils/helper";
+import { User } from "./feed.type";
+
+import styles from "./post.module.css";
+import btnStyles from "../../components/post-prompt/post-prompt.module.css";
 
 type PostFormType = {
   closeModal: () => void;

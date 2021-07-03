@@ -1,39 +1,15 @@
-import FeedActor from "../../components/feed-actor/FeedActor";
-import styles from "./post.module.css";
-import PostActions from "./PostActions";
-import CommentSection from "./CommentSection";
+import { useState } from "react";
 import { HiThumbUp } from "react-icons/hi";
 import ContentEditable from "react-contenteditable";
-import { useState } from "react";
-import { selectProfile } from "../profile/profileSlice";
 import { useAppSelector } from "../../app/hooks";
+import { selectProfile } from "../profile/profileSlice";
 
-export type User = {
-  id: string;
-  displayImg: string;
-  name: string;
-  tagline?: string;
-};
+import FeedActor from "../../components/feed-actor/FeedActor";
+import PostActions from "./PostActions";
+import CommentSection from "./CommentSection";
+import { Post as PostType } from "./feed.type";
 
-export type Comment = {
-  post: string;
-  id: string;
-  user: User;
-  commentText: string;
-  commentLikes: Array<string>;
-  repliedTo?: string;
-  replies?: Array<Comment>;
-};
-
-export type PostType = {
-  id: string;
-  user: User;
-  createdAt: number;
-  content: string;
-  likes: Array<string>;
-  img?: string;
-  comments: Array<Comment>;
-};
+import styles from "./post.module.css";
 
 type PostProp = {
   post: PostType;

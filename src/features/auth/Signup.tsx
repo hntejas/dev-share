@@ -1,12 +1,11 @@
 import { useState, SyntheticEvent } from "react";
-
-import { Link, useNavigate, useLocation } from "react-router-dom";
-
-import { useAppDispatch } from "../../app/hooks";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch, useQuery } from "../../app/hooks";
 
 import { showToast } from "../../utils/helper";
-import styles from "./auth.module.css";
 import { signUpAsync } from "./auth.service";
+
+import styles from "./auth.module.css";
 
 type FieldId = "email" | "password" | "username" | "name";
 
@@ -53,15 +52,11 @@ export default function SignUp() {
     },
   };
 
-  function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
-  let query = useQuery();
-
-  const navigate = useNavigate();
   const [userData, setUserData] = useState(initialUserData);
   const [showErrors, setShowErrors] = useState(false);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const query = useQuery();
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();

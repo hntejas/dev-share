@@ -3,9 +3,17 @@
   max-width: 800px;
   overflow: hidden;
   border-radius: 10px;
-  background: white;
+  background: var(--white);
   margin: 1rem;
   min-height: 85vh;
+}
+
+.connectionsContainer {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .connectionheader {
@@ -23,15 +31,15 @@
 }
 
 .activeTab {
-  border-bottom: 4px solid green;
-  color: green;
+  border-bottom: 4px solid #008000;
+  color: #008000;
 }
 
 .connectionCardContainer {
   width: 180px;
   max-width: 180px;
   border-radius: 10px;
-  background: white;
+  background: var(--white);
   height: max-content;
   margin: 1rem 0.5rem;
   overflow: hidden;
@@ -44,8 +52,8 @@
   border-radius: 15px;
   padding: 0.5rem 1.5rem;
   margin: 0.5rem auto;
-  background: #0a66c2;
-  color: white;
+  background: var(--primary-blue);
+  color: var(--white);
   font-weight: 600;
 }
 

@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: flex-start;
   box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
-  background: white;
+  background: var(--white);
 }
 
 .authForm h3,
@@ -40,7 +40,7 @@ p {
 .authBtn {
   padding: 0.6rem 0.6rem;
   background: #2874f0;
-  color: white;
+  color: var(--white);
   border: none;
   border-radius: 0.5rem;
   margin: auto;

@@ -1,17 +1,16 @@
+import { useAppSelector } from "../../app/hooks";
+import { selectPost } from "./postSlice";
+
 import FollowSuggestions from "../../components/follow-suggestions/FollowSuggestions";
 import PostPrompt from "../../components/post-prompt/PostPrompt";
 import ProfileCard from "../../components/profile-card/ProfileCard";
 import Post from "./Post";
-import { useAppSelector } from "../../app/hooks";
-import { selectPost } from "./postSlice";
 
-export default function FeedPage({
-  setOpenPostForm,
-  openPostForm,
-}: {
+type FeedPageProp = {
   setOpenPostForm: React.Dispatch<React.SetStateAction<boolean>>;
-  openPostForm: boolean;
-}) {
+};
+
+export default function FeedPage({ setOpenPostForm }: FeedPageProp) {
   const { posts, status } = useAppSelector(selectPost);
 
   return (
@@ -30,7 +29,7 @@ export default function FeedPage({
           ? "Loading..."
           : posts.map((post) => <Post post={post} key={post.id} />)}
       </div>
-      <div className="sticky mw-300 full-width-child">
+      <div className="sticky mw-300">
         <div className="tablet-only">
           <ProfileCard />
         </div>

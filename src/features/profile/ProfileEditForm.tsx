@@ -1,9 +1,11 @@
 import { useState } from "react";
-import styles from "./profile.module.css";
 import { useAppDispatch } from "../../app/hooks";
+import { logoutUser } from "../auth/authSlice";
+
 import { updateUserAsync } from "./profile.service";
 import { showToast } from "../../utils/helper";
-import { logoutUser } from "../auth/authSlice";
+
+import styles from "./profile.module.css";
 
 type ProfileFormProp = {
   closeModal: () => void;
@@ -55,8 +57,8 @@ export default function ProfileEditForm({ closeModal, user }: ProfileFormProp) {
       <hr />
       <div className={styles.profileForm}>
         <div className={styles.inputWrapper}>
-          <label>
-            Name<span style={{ color: "red" }}>*</span>
+          <label aria-required="true" htmlFor={"name"}>
+            Name<span className={styles.required}>*</span>
           </label>
           <input
             type="text"
@@ -66,8 +68,8 @@ export default function ProfileEditForm({ closeModal, user }: ProfileFormProp) {
           />
         </div>
         <div className={styles.inputWrapper}>
-          <label>
-            Tagline<span style={{ color: "red" }}>*</span>
+          <label aria-required="true" htmlFor={"tagline"}>
+            Tagline<span className={styles.required}>*</span>
           </label>
           <input
             type="text"

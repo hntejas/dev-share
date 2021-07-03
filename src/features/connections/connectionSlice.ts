@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { User } from "../feed/Post";
+import { User } from "../feed/feed.type";
 import { unfollowUserAsync } from "./connection.service";
 import {
   loadUserConnectionsAsync,

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { selectConnection } from "../connections/connectionSlice";
-
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { HiPencil } from "react-icons/hi";
 
 import FollowSuggestions from "../../components/follow-suggestions/FollowSuggestions";
 import Modal from "../../components/modal/Modal";
@@ -10,14 +10,15 @@ import Post from "../feed/Post";
 import ProfileImageForm from "./ProfileImageForm";
 import ProfileEditForm from "./ProfileEditForm";
 import { selectProfile } from "./profileSlice";
-import { HiPencil } from "react-icons/hi";
-
 import { loadProfile } from "./profile.service";
 import {
   followUserAsync,
   unfollowUserAsync,
 } from "../connections/connection.service";
+
 import styles from "./profile.module.css";
+import BlankAvatar from "../../assets/images/blank-profile.png";
+import ProfileBanner from "../../assets/images/profile-banner.svg";
 
 export default function ProfilePage() {
   const { userId } = useParams();
@@ -42,7 +43,6 @@ export default function ProfilePage() {
       fetchUser();
     } else {
       setLoading(false);
-      //setProfile(userProfile);
     }
   }, [userId]);
 
@@ -68,17 +68,11 @@ export default function ProfilePage() {
   return (
     <>
       <div className={styles.container}>
-        <img
-          src="https://static-exp1.licdn.com/sc/h/9e0ckeb27mzi70ne80f4hv7il"
-          alt={profile.name}
-        />
+        <img src={ProfileBanner} alt={profile.name} />
         <div className={styles.psuedoContainer}>
           <div className={styles.displayImgContainer}>
             <img
-              src={
-                profile.displayImg ||
-                "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-              }
+              src={profile.displayImg || BlankAvatar}
               className={styles.displayImg}
               alt={profile.name}
             />
@@ -107,7 +101,7 @@ export default function ProfilePage() {
             </button>
           )}
         </div>
-        <div style={{ margin: "0 1rem" }}>
+        <div className={styles.detailsWrapper}>
           <h2 className={styles.profileName}>{profile.name}</h2>
           <p className={styles.profileTagline}>{profile.tagline}</p>
           <br />
@@ -132,7 +126,7 @@ export default function ProfilePage() {
           <hr />
         </div>
 
-        <div style={{ margin: "1rem" }}>
+        <div className={styles.detailsWrapper}>
           <h3>Your Posts</h3>
           {profile.posts.map((post) => (
             <Post post={post} key={post.id}></Post>

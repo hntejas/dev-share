@@ -2,11 +2,11 @@ import styles from "./navbar.module.css";
 import NavLinks from "./NavLinks";
 import { Link } from "react-router-dom";
 
-export default function NavBar({
-  setOpenPostForm,
-}: {
+type NavBarProp = {
   setOpenPostForm: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+};
+
+export default function NavBar({ setOpenPostForm }: NavBarProp) {
   return (
     <div className={styles.navbar}>
       <h3>

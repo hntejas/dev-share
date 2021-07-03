@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { Comment } from "../features/feed/Post";
+import { Comment } from "../features/feed/feed.type";
 
 export function showToast(text: JSX.Element | string) {
   toast.dark(text, {
@@ -22,7 +22,6 @@ export const getAuthToken = () =>
   JSON.parse(localStorage.getItem("devShareAuth") as string)["token"];
 
 export const mapCommentReplies = (comments: Array<Comment>) => {
-  console.log(comments);
   let parentComments: Array<Comment> = [];
   let replies: Array<Comment> = [];
 

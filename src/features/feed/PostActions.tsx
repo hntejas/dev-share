@@ -1,7 +1,7 @@
-import { HiOutlineThumbUp, HiOutlineChat } from "react-icons/hi"; //HiThumbUp
-import styles from "./post.module.css";
+import { HiOutlineThumbUp, HiOutlineChat } from "react-icons/hi";
 import { useAppDispatch } from "../../app/hooks";
 import { likePostAsync, unlikePostAsync } from "./post.service";
+import styles from "./post.module.css";
 
 type PostActionProps = {
   isLiked: boolean;
@@ -31,7 +31,7 @@ export default function PostActions({
       <div
         className={styles.actionBtn}
         onClick={likeHandler}
-        style={{ color: isLiked ? "#0A66C2" : "initial" }}
+        style={{ color: isLiked ? "var(--primary-blue)" : "initial" }}
       >
         <HiOutlineThumbUp /> <span>Like</span>
       </div>

@@ -1,11 +1,14 @@
 import { MutableRefObject, useRef, useState } from "react";
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
-import Avatar from "../../components/avatar/avatar";
-import styles from "./post.module.css";
-import { FiSend } from "react-icons/fi";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
+
+import Avatar from "../../components/avatar/Avatar";
+import { FiSend } from "react-icons/fi";
+
 import { selectProfile } from "../profile/profileSlice";
 import { submitCommentAsync } from "./post.service";
+
+import styles from "./post.module.css";
 
 export default function CommentForm({
   postId,
@@ -51,7 +54,7 @@ export default function CommentForm({
             onChange={onChangeHandler}
             className={styles.commentInput}
           />
-          <FiSend style={{ fontSize: "1.4rem" }} onClick={submitComment} />
+          <FiSend size={"1.4rem"} onClick={submitComment} />
         </div>
       </div>
     </>

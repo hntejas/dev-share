@@ -1,9 +1,11 @@
-import Comment from "./Comment";
-import { Comment as CommentType } from "./Post";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../app/hooks";
-import { loadPostCommentAsync } from "./post.service";
+
+import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import { Comment as CommentType } from "./feed.type";
+
+import { loadPostCommentAsync } from "./post.service";
 
 type CommentSectionProp = {
   comments: Array<CommentType>;

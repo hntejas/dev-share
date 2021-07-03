@@ -1,5 +1,5 @@
 .container {
-  background: white;
+  background: var(--white);
   max-width: 525px;
   margin: 1rem 0;
   padding: 1rem;
@@ -13,17 +13,17 @@
 
 .postCtaBtn {
   background: none;
-  border: 1px solid #00000026;
+  border: 1px solid #ebebeb;
   border-radius: 25px;
   width: 100%;
-  color: #00000099;
+  color: var(--text-dark-gray);
   font-weight: 600;
   text-align: left;
   padding-left: 1rem;
 }
 
 .postCtaBtn:hover {
-  background: #00000014;
+  background: #ebebeb;
   cursor: pointer;
 }
 
@@ -37,14 +37,14 @@
 }
 
 .postActionBtn > span {
-  color: #00000099;
+  color: var(--text-dark-gray);
   font-weight: 600;
   margin-left: 0.3rem;
 }
 
 .postActionBtn > svg {
   font-size: 1rem;
-  color: #0a66c2;
+  color: var(--primary-blue);
 }
 
 .postActionBtn:hover {

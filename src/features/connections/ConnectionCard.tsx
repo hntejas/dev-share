@@ -1,9 +1,13 @@
-import { User } from "../feed/Post";
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../app/hooks";
+
+import { User } from "../feed/feed.type";
+import { followUserAsync, unfollowUserAsync } from "./connection.service";
+
+import BlankAvatar from "../../assets/images/blank-profile.png";
+import ProfileBanner from "../../assets/images/profile-banner.svg";
 import profileCardStyles from "../../components/profile-card/profile-card.module.css";
 import styles from "./connections.module.css";
-import { useAppDispatch } from "../../app/hooks";
-import { followUserAsync, unfollowUserAsync } from "./connection.service";
-import { Link } from "react-router-dom";
 
 type ConnectionCardProp = {
   user: User;
@@ -28,16 +32,13 @@ export default function ConnectionCard({
       <div>
         <img
           className={profileCardStyles.bannerImg}
-          src="https://static-exp1.licdn.com/sc/h/9e0ckeb27mzi70ne80f4hv7il"
+          src={ProfileBanner}
           alt="banner"
         />
         <div className={profileCardStyles.profileImgWrapper}>
           <img
             className={profileCardStyles.profileAvatar}
-            src={
-              user.displayImg ||
-              "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-            }
+            src={user.displayImg || BlankAvatar}
             alt={user.name}
           />
         </div>

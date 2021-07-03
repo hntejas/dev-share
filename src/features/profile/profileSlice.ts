@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { PostType } from "../feed/postSlice";
+import { Post as PostType } from "../feed/feed.type";
 import {
   updateUserAsync,
   updateUserImgAsync,

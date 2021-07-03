@@ -1,13 +1,15 @@
-import Avatar from "../avatar/avatar";
-import { HiPhotograph } from "react-icons/hi"; // HiCode
+import Avatar from "../avatar/Avatar";
+import { HiPhotograph } from "react-icons/hi";
 
-import styles from "./post-prompt.module.css";
 import { useAppSelector } from "../../app/hooks";
 import { selectProfile } from "../../features/profile/profileSlice";
+
+import styles from "./post-prompt.module.css";
 
 type PostForm = {
   openForm: () => void;
 };
+
 export default function PostPrompt({ openForm }: PostForm) {
   const user = useAppSelector(selectProfile);
 
@@ -24,10 +26,6 @@ export default function PostPrompt({ openForm }: PostForm) {
           <HiPhotograph />
           <span>Photo</span>
         </button>
-        {/* <button className={styles.postActionBtn}>
-          <HiCode />
-          <span>Code</span>
-        </button> */}
       </div>
     </div>
   );

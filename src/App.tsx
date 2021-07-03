@@ -54,12 +54,7 @@ function App() {
           <PrivateRoute path="/connections" element={<ConnectionPage />} />
           <PrivateRoute
             path="/"
-            element={
-              <FeedPage
-                setOpenPostForm={setOpenPostForm}
-                openPostForm={openPostForm}
-              />
-            }
+            element={<FeedPage setOpenPostForm={setOpenPostForm} />}
           />
         </Routes>
         {openPostForm && (

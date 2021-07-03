@@ -1,5 +1,7 @@
-import { User } from "../feed/Post";
+import { User } from "../feed/feed.type";
 import ConnectionCard from "./ConnectionCard";
+
+import styles from "./connections.module.css";
 
 type ConnectionListProp = {
   users: Array<User>;
@@ -28,15 +30,7 @@ export default function ConnectionList({
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        margin: "auto",
-        width: "100%",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-      }}
-    >
+    <div className={styles.connectionsContainer}>
       {pageType === "FOLLOWERS"
         ? mappedUsers.map((mappedUser: MappedUser) => (
             <ConnectionCard

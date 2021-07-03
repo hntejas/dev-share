@@ -2,7 +2,7 @@
   max-width: 220px;
   min-width: 200px;
   border-radius: 10px;
-  background: white;
+  background: var(--white);
   height: max-content;
   margin: 1rem 0;
   overflow: hidden;
@@ -34,7 +34,7 @@
 }
 
 .profileTagline {
-  color: #00000099;
+  color: var(--text-dark-gray);
   margin: 0.5rem 0;
   font-size: 0.9rem;
   min-height: 3.5rem;
@@ -58,5 +58,5 @@
 }
 
 .link:hover {
-  color: #0a66c2;
+  color: var(--primary-blue);
 }

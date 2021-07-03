@@ -1,11 +1,13 @@
-import { MutableRefObject, useState } from "react";
+import { useRef, MutableRefObject, useState } from "react";
 import { HiPhotograph } from "react-icons/hi";
-import styles from "./profile.module.css";
-import btnStyles from "../../components/post-prompt/post-prompt.module.css";
-import { useRef } from "react";
 import { useAppDispatch } from "../../app/hooks";
+
 import { updateUserImgAsync } from "./profile.service";
 import { showToast } from "../../utils/helper";
+
+import styles from "./profile.module.css";
+import btnStyles from "../../components/post-prompt/post-prompt.module.css";
+import BlankAvatar from "../../assets/images/blank-profile.png";
 
 type ProfileImageFormProp = {
   displayImg?: string;
@@ -53,9 +55,7 @@ export default function ProfileImageForm({
       fileInput.current.value = "";
     }
     setSelectedFile(undefined);
-    setImg(
-      "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-    );
+    setImg(BlankAvatar);
     setImgStatus({ ...imgStatusMap, remove: true });
   };
 
@@ -92,10 +92,7 @@ export default function ProfileImageForm({
       <br />
       <div className={styles.flexWrapper}>
         <img
-          src={
-            img ||
-            "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-          }
+          src={img || BlankAvatar}
           className={styles.previewImg}
           alt="profile-preview"
         ></img>

@@ -1,14 +1,12 @@
 import { useState, SyntheticEvent } from "react";
-
 import { Link, useNavigate, useLocation } from "react-router-dom";
-
-import { showToast } from "../../utils/helper";
-
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
-import styles from "./auth.module.css";
 import { loginAsync } from "./auth.service";
 import { selectAuth } from "./authSlice";
+import { showToast } from "../../utils/helper";
+
+import styles from "./auth.module.css";
 
 type location = {
   state?: {

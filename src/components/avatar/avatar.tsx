@@ -1,3 +1,4 @@
+import BlankAvatar from "../../assets/images/blank-profile.png";
 import styles from "./avatar.module.css";
 
 type AvatarProp = {
@@ -11,6 +12,7 @@ const sizeChart = {
   MEDIUM: styles.medium,
   LARGE: styles.large,
 };
+
 export default function Avatar({
   avatarImg,
   avatarName,
@@ -18,10 +20,7 @@ export default function Avatar({
 }: AvatarProp) {
   return (
     <img
-      src={
-        avatarImg ||
-        "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-      }
+      src={avatarImg || BlankAvatar}
       alt={avatarName}
       className={[styles.avatarImg, avatarSize && sizeChart[avatarSize]].join(
         " "

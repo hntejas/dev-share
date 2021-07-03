@@ -3,7 +3,7 @@
   max-width: 800px;
   overflow: hidden;
   border-radius: 10px;
-  background: white;
+  background: var(--white);
   margin: 1rem 1.5rem;
 }
 
@@ -21,6 +21,10 @@ h3 {
   margin: auto 1rem;
   margin-top: -5rem;
   width: calc(100% - 2rem);
+}
+
+.detailsWrapper {
+  margin: 1rem;
 }
 
 .displayImg {
@@ -46,8 +50,8 @@ h3 {
 }
 
 .editBtn {
-  background: #0a66c2;
-  color: white;
+  background: var(--primary-blue);
+  color: var(--white);
   font-weight: 600;
   border: 0;
   padding: 0.5rem 0.8rem;
@@ -80,7 +84,7 @@ h3 {
 }
 
 .profileFormContainer {
-  background: white;
+  background: var(--white);
   padding: 1rem;
   width: 350px;
 }
@@ -108,7 +112,7 @@ h3 {
   width: calc(100% - 0.6rem);
   padding: 0.5rem 0.3rem;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid #ebebeb;
   margin: 0.3rem 0;
 }
 
@@ -116,10 +120,14 @@ h3 {
   width: calc(100% - 0.6rem);
   padding: 0.5rem 0.3rem;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid #ebebeb;
   margin: 0.3rem 0;
   height: 5rem;
   font-family: inherit;
+}
+
+.required {
+  color: red;
 }
 
 .closeBtn {
@@ -152,7 +160,7 @@ h3 {
 }
 .editHover > svg {
   font-size: 1.5rem;
-  fill: white;
+  fill: var(--white);
 }
 
 .previewImg {

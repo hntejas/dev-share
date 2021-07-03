@@ -1,8 +1,10 @@
-import styles from "./feed-actor.module.css";
-import { User } from "../../features/feed/Post";
-import moment, { MomentInput } from "moment";
-import Avatar from "../avatar/avatar";
 import { Link } from "react-router-dom";
+import moment, { MomentInput } from "moment";
+
+import Avatar from "../avatar/Avatar";
+import { User } from "../../features/feed/feed.type";
+
+import styles from "./feed-actor.module.css";
 
 type FeedActorProp = {
   user: User;

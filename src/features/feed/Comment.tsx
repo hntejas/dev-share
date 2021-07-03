@@ -1,15 +1,16 @@
-import FeedActor from "../../components/feed-actor/FeedActor";
-
-import { Comment as CommentType } from "./Post";
-import Avatar from "../../components/avatar/avatar";
-import styles from "./post.module.css";
-import CommentReply from "./CommentReply";
-import { useState } from "react";
-import CommentForm from "./CommentForm";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
+
+import { Comment as CommentType } from "./feed.type";
+import Avatar from "../../components/avatar/Avatar";
+import FeedActor from "../../components/feed-actor/FeedActor";
+import CommentReply from "./CommentReply";
+import CommentForm from "./CommentForm";
+
 import { selectProfile } from "../profile/profileSlice";
 import { likeCommentAsync, unlikeCommentAsync } from "./post.service";
+
+import styles from "./post.module.css";
 
 type CommentProp = {
   comment: CommentType;
@@ -59,7 +60,7 @@ export default function Comment({ comment }: CommentProp) {
         <div className={styles.commentActionContainer}>
           <span
             className={styles.commentActionbtn}
-            style={{ color: isLiked ? "#0A66C2" : "inherit" }}
+            style={{ color: isLiked ? "var(--primary-blue)" : "inherit" }}
             onClick={likeHandler}
           >
             Like • {comment.commentLikes.length}{" "}

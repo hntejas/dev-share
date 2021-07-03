@@ -1,7 +1,11 @@
-import styles from "./profile-card.module.css";
+import { Link } from "react-router-dom";
+
 import { useAppSelector } from "../../app/hooks";
 import { selectProfile } from "../../features/profile/profileSlice";
-import { Link } from "react-router-dom";
+
+import BlankAvatar from "../../assets/images/blank-profile.png";
+import ProfileBanner from "../../assets/images/profile-banner.svg";
+import styles from "./profile-card.module.css";
 
 export default function ProfileCard() {
   const user = useAppSelector(selectProfile);
@@ -9,18 +13,11 @@ export default function ProfileCard() {
   return (
     <div className={styles.container}>
       <div>
-        <img
-          className={styles.bannerImg}
-          src="https://static-exp1.licdn.com/sc/h/9e0ckeb27mzi70ne80f4hv7il"
-          alt="banner"
-        />
+        <img className={styles.bannerImg} src={ProfileBanner} alt="banner" />
         <div className={styles.profileImgWrapper}>
           <img
             className={styles.profileAvatar}
-            src={
-              user.displayImg ||
-              "https://www.allhealthnetwork.org/wp-content/uploads/2020/09/profile-blank-1.png"
-            }
+            src={user.displayImg || BlankAvatar}
             alt={user.name}
           />
         </div>

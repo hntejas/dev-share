@@ -53,13 +53,6 @@
   display: block;
 }
 
-.full-width-child > div {
-  width: 100%;
-  min-width: 250px;
-  max-width: calc(100% - 2rem);
-  min-height: 5rem;
-}
-
 .mw-300 {
   max-width: 300px;
 }

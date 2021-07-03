@@ -1,11 +1,14 @@
 import { SyntheticEvent, useState } from "react";
-import ProfileCard from "../../components/profile-card/ProfileCard";
-import styles from "./connections.module.css";
-import ConnectionList from "./ConnectionsList";
 import { useAppSelector } from "../../app/hooks";
+
+import ProfileCard from "../../components/profile-card/ProfileCard";
+import ConnectionList from "./ConnectionsList";
+
 import { selectConnection } from "./connectionSlice";
+import styles from "./connections.module.css";
 
 type PageTypes = "FOLLOWERS" | "FOLLOWING" | "NEW";
+
 export default function ConnectionPage() {
   const [pageType, setPageType] = useState<PageTypes>("FOLLOWERS");
   const { suggestions, followers, following } =

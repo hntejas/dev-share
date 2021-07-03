@@ -1,21 +1,21 @@
-import {
-  IoHomeOutline,
-  IoPeopleOutline,
-  //IoBookmarkOutline,
-  IoPersonCircleOutline,
-} from "react-icons/io5";
-import { SiAddthis } from "react-icons/si";
-import styles from "./navlinks.module.css";
+import { SyntheticEvent } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { selectAuth, logoutUser } from "../auth/authSlice";
-import { SyntheticEvent } from "react";
+import {
+  IoHomeOutline,
+  IoPeopleOutline,
+  IoPersonCircleOutline,
+} from "react-icons/io5";
+import { SiAddthis } from "react-icons/si";
 
-export default function NavLinks({
-  setOpenPostForm,
-}: {
+import styles from "./navlinks.module.css";
+
+type NavLinkProp = {
   setOpenPostForm: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+};
+
+export default function NavLinks({ setOpenPostForm }: NavLinkProp) {
   const auth = useAppSelector(selectAuth);
   const dispatch = useAppDispatch();
 
@@ -45,10 +45,6 @@ export default function NavLinks({
         <SiAddthis />
         <span>Post</span>
       </div>
-      {/* <NavLink className={styles.navlink} to="/">
-        <IoBookmarkOutline />
-        <span>Saved</span>
-      </NavLink> */}
       <div className={[styles.navlink, styles.hoverMenuContainer].join(" ")}>
         <IoPersonCircleOutline />
         <span>Me</span>
