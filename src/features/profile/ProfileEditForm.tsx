@@ -49,7 +49,7 @@ export default function ProfileEditForm({ closeModal, user }: ProfileFormProp) {
   return (
     <div className={styles.profileFormContainer}>
       <div className={styles.flexWrapper}>
-        <h3>Create a post</h3>
+        <h3>Edit Profile Info</h3>
         <span onClick={() => closeModal()} className={styles.closeBtn}>
           &#x274C;
         </span>
