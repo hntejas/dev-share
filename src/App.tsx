@@ -17,6 +17,7 @@ import { resetProfile } from "./features/profile/profileSlice";
 import { loadUserConnectionsAsync } from "./features/connections/connection.service";
 import { resetConnection } from "./features/connections/connectionSlice";
 import { loadFeedAsync } from "./features/feed/post.service";
+import { resetPosts } from "./features/feed/postSlice";
 import Modal from "./components/modal/Modal";
 import PostForm from "./features/feed/PostForm";
 
@@ -36,6 +37,7 @@ function App() {
         dispatch(loadFeedAsync());
       } else {
         dispatch(resetProfile());
+        dispatch(resetPosts());
         dispatch(resetConnection());
       }
     })();

@@ -63,3 +63,8 @@ p {
   font-size: 0.7rem;
   border-radius: 0.3rem;
 }
+
+.inlineBtn {
+  text-decoration: underline;
+  cursor: pointer;
+}

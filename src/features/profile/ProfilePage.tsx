@@ -52,7 +52,7 @@ export default function ProfilePage() {
     }
   }, [userId, userProfile]);
 
-  if (profile.status === "loader-loading" || loading) {
+  if (profile.status === "user-loading" || loading) {
     return <h2>Loading..</h2>;
   }
 
@@ -129,7 +129,7 @@ export default function ProfilePage() {
         <div className={styles.detailsWrapper}>
           <h3>Your Posts</h3>
           {profile.posts.map((post) => (
-            <Post post={post} key={post.id}></Post>
+            <Post post={post} key={post.id} hideActions={true}></Post>
           ))}
         </div>
 

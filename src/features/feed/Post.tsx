@@ -13,9 +13,10 @@ import styles from "./post.module.css";
 
 type PostProp = {
   post: PostType;
+  hideActions?: boolean;
 };
 
-export default function Post({ post }: PostProp) {
+export default function Post({ post, hideActions }: PostProp) {
   const [loadComment, setLoadComment] = useState(false);
   const user = useAppSelector(selectProfile);
 
@@ -23,7 +24,11 @@ export default function Post({ post }: PostProp) {
 
   return (
     <div className={styles.postContainer}>
-      <FeedActor user={post.user} timestamp={post.createdAt} />
+      <FeedActor
+        user={post.user}
+        timestamp={post.createdAt}
+        isCurrentUser={user.id === post.user.id}
+      />
       <div className={styles.postContent}>
         <ContentEditable
           html={post.content}
@@ -36,12 +41,15 @@ export default function Post({ post }: PostProp) {
         <HiThumbUp className={styles.postLikesStatBtn} /> {post.likes.length}
       </div>
       <hr />
-      <PostActions
-        loadComment={() => setLoadComment(true)}
-        postId={post.id}
-        isLiked={isLiked}
-        userId={user.id || ""}
-      />
+      {!hideActions && (
+        <PostActions
+          loadComment={() => setLoadComment(true)}
+          postId={post.id}
+          isLiked={isLiked}
+          userId={user.id || ""}
+        />
+      )}
+
       {loadComment && (
         <>
           <CommentSection comments={post.comments} postId={post.id} />

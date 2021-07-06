@@ -28,7 +28,9 @@ export const postSlice = createSlice({
   name: "post",
   initialState,
   reducers: {
-    dummy: (state) => {},
+    resetPosts: (state) => {
+      state.posts = [];
+    },
   },
   extraReducers: (buildCase) => {
     buildCase
@@ -196,7 +198,7 @@ export const postSlice = createSlice({
   },
 });
 
-export const { dummy } = postSlice.actions;
+export const { resetPosts } = postSlice.actions;
 
 export const selectPost = (state: RootState) => state.post;
 

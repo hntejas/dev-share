@@ -7,7 +7,7 @@ import {
   IoPeopleOutline,
   IoPersonCircleOutline,
 } from "react-icons/io5";
-import { SiAddthis } from "react-icons/si";
+import { GoDiffAdded } from "react-icons/go";
 
 import styles from "./navlinks.module.css";
 
@@ -42,7 +42,7 @@ export default function NavLinks({ setOpenPostForm }: NavLinkProp) {
         className={[styles.navlink, styles.mobileOnly].join(" ")}
         onClick={() => setOpenPostForm(true)}
       >
-        <SiAddthis />
+        <GoDiffAdded />
         <span>Post</span>
       </div>
       <div className={[styles.navlink, styles.hoverMenuContainer].join(" ")}>

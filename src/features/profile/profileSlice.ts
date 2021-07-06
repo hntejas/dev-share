@@ -18,7 +18,7 @@ export type ProfileState = {
   followers?: Number;
   following?: Number;
   posts: Array<PostType>;
-  status?: "idle" | "loading" | "failed" | "success" | "loader-loading";
+  status?: "idle" | "loading" | "failed" | "success" | "user-loading";
 };
 
 const initialState: ProfileState = {
@@ -45,7 +45,7 @@ export const profileSlice = createSlice({
   extraReducers: (buildCase) => {
     buildCase
       .addCase(loadUserAsync.pending, (state) => {
-        state.status = "loader-loading";
+        state.status = "user-loading";
       })
       .addCase(loadUserAsync.fulfilled, (state, action) => {
         if (action.payload.success) {

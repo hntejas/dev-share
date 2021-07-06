@@ -138,6 +138,9 @@
 .commentInput {
   width: calc(100% - 2rem);
   line-height: 1.2rem;
+  min-height: 0;
+  border: none;
+  resize: none;
 }
 
 .commentInput:focus {
