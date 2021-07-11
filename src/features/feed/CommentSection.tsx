@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import { Comment as CommentType } from "./feed.type";
 
 import { loadPostCommentAsync } from "./post.service";
+import { selectPost } from "./postSlice";
 
 type CommentSectionProp = {
   comments: Array<CommentType>;
@@ -17,10 +18,15 @@ export default function CommentSection({
   postId,
 }: CommentSectionProp) {
   const dispatch = useAppDispatch();
+  const { status } = useAppSelector(selectPost);
 
   useEffect(() => {
     dispatch(loadPostCommentAsync(postId));
   }, [dispatch, postId]);
+
+  if (status === "loading-comments") {
+    return <p>Loading comments..</p>;
+  }
 
   return (
     <>

@@ -25,9 +25,11 @@ export default function FeedPage({ setOpenPostForm }: FeedPageProp) {
             setOpenPostForm((state) => !state);
           }}
         />
-        {status === "loading"
-          ? "Loading..."
-          : posts.map((post) => <Post post={post} key={post.id} />)}
+        {status === "loading" ? (
+          <p>Loading posts...</p>
+        ) : (
+          posts.map((post) => <Post post={post} key={post.id} />)
+        )}
       </div>
       <div className="sticky mw-300">
         <div className="tablet-only">

@@ -109,7 +109,7 @@ h3 {
 }
 
 .inputWrapper > input {
-  width: calc(100% - 0.6rem);
+  width: 100%;
   padding: 0.5rem 0.3rem;
   border-radius: 5px;
   border: 1px solid #ebebeb;
@@ -117,7 +117,7 @@ h3 {
 }
 
 .inputWrapper > textarea {
-  width: calc(100% - 0.6rem);
+  width: 100%;
   padding: 0.5rem 0.3rem;
   border-radius: 5px;
   border: 1px solid #ebebeb;
@@ -177,7 +177,7 @@ h3 {
 
 @media (max-width: 768px) {
   .container {
-    width: calc(100vw);
+    width: 100vw;
     margin: 0;
   }
   .profileTagline {

@@ -127,7 +127,7 @@ export default function ProfilePage() {
         </div>
 
         <div className={styles.detailsWrapper}>
-          <h3>Your Posts</h3>
+          <h3>{userId ? profile.name + "'s" : "Your"} Posts</h3>
           {profile.posts.map((post) => (
             <Post post={post} key={post.id} hideActions={true}></Post>
           ))}

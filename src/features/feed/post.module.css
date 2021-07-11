@@ -88,7 +88,7 @@
 
 .commentDetail {
   padding: 0.5rem;
-  width: calc(100% - 1rem);
+  width: 100%;
   background: #00000014;
   border-radius: 5px;
   margin-right: 0.5rem;
@@ -96,7 +96,7 @@
 
 .commentReplyDetail {
   margin-right: 0;
-  width: calc(100% - 1rem);
+  width: 100%;
   padding: 0.5rem;
   background: #00000014;
   border-radius: 5px;
@@ -123,11 +123,11 @@
 .commentForm {
   display: flex;
   align-items: center;
-  width: calc(100% - 1rem);
+  width: 100%;
 }
 
 .commentInputWrapper {
-  width: calc(100% - 1rem);
+  width: 100%;
   display: flex;
   border: 1px solid gray;
   border-radius: 25px;
