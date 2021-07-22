@@ -26,6 +26,7 @@ type PostFormType = {
 export default function PostForm({ closeModal }: PostFormType) {
   const [text, setText] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | undefined>();
+  const [isPosting, setIsPosting] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const post = useAppSelector(selectPost);
   const { id, name, displayImg, tagline, about } =
@@ -41,6 +42,7 @@ export default function PostForm({ closeModal }: PostFormType) {
     selectedFile && formData.append("img", selectedFile as Blob);
     text && formData.append("content", text);
 
+    setIsPosting(true);
     const response = await dispatch(submitPostSync(formData));
 
     if (response.payload.success) {
@@ -49,6 +51,7 @@ export default function PostForm({ closeModal }: PostFormType) {
     } else {
       showToast(<p>Ops! Something went wrong, Try again later</p>);
     }
+    setIsPosting(false);
   };
 
   const textChangeHandler = (e: ContentEditableEvent) => {
@@ -150,11 +153,11 @@ export default function PostForm({ closeModal }: PostFormType) {
           </button> */}
         </div>
         <button
-          disabled={!text && !selectedFile}
+          disabled={(!text && !selectedFile) || isPosting}
           className={styles.postSubmitBtn}
           onClick={submitPost}
         >
-          Post
+          {isPosting ? "Posting..." : "Post"}
         </button>
       </div>
     </div>
