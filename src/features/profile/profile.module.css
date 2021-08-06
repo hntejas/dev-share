@@ -1,0 +1,186 @@
+.container {
+  width: calc(100vw - 350px - 2rem);
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--white);
+  margin: 1rem 1.5rem;
+}
+
+.container h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.psuedoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: auto 1rem;
+  margin-top: -5rem;
+  width: calc(100% - 2rem);
+}
+
+.detailsWrapper {
+  margin: 1rem;
+}
+
+.displayImg {
+  display: block;
+  width: 7rem;
+  height: inherit;
+  border-radius: 50%;
+}
+
+.profileName {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+}
+
+.profileTagline {
+  margin: 0;
+  max-width: 50%;
+  color: #000000e6;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.editBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+  border: 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15px;
+  height: max-content;
+}
+
+.profileAbout {
+  font-size: 0.95rem;
+}
+
+.editBtn:hover {
+  background: #004182;
+  cursor: pointer;
+}
+
+.editBtn:disabled {
+  background: #91c4f8;
+}
+
+.dashboard {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.dashboardStat {
+  width: 33.33%;
+  text-align: center;
+}
+
+.profileFormContainer {
+  background: var(--white);
+  padding: 1rem;
+  width: 350px;
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputWrapper > input {
+  width: 100%;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  margin: 0.3rem 0;
+}
+
+.inputWrapper > textarea {
+  width: 100%;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  margin: 0.3rem 0;
+  height: 5rem;
+  font-family: inherit;
+}
+
+.required {
+  color: red;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.displayImgContainer {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.displayImgContainer:hover > .editHover {
+  display: flex;
+  cursor: pointer;
+}
+
+.editHover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(238, 238, 238, 0.4);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.editHover > svg {
+  font-size: 1.5rem;
+  fill: var(--white);
+}
+
+.previewImg {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.submitChangesBtn {
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;
+    margin: 0;
+  }
+  .profileTagline {
+    max-width: 90%;
+  }
+}

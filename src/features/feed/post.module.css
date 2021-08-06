@@ -1,0 +1,228 @@
+.postContainer {
+  max-width: 525px;
+  margin: 1rem auto;
+  font-size: 14px;
+  letter-spacing: normal;
+  font-family: system-ui;
+  background: var(--white);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.postContent {
+  margin: 0.5rem;
+}
+
+.postStatContainer {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark-gray);
+}
+
+.postLikesStatBtn {
+  color: rgb(230, 247, 255);
+  font-size: 0.9rem;
+  padding: 0.15rem;
+  margin-right: 5px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  outline: black;
+}
+
+.postImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.flex {
+  display: flex;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.flexStart {
+  justify-content: flex-start;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.actionBtn svg {
+  font-size: 1.3rem;
+  margin-right: 5px;
+}
+
+.actionBtn:hover {
+  color: var(--primary-blue);
+  background: #00000014;
+}
+
+.commentContainer {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.commentReplyList {
+  margin-top: 1rem;
+}
+
+.commentReplyContainer {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.commentDetailContainer {
+  width: 100%;
+}
+
+.commentDetail {
+  padding: 0.5rem;
+  width: 100%;
+  background: #00000014;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+.commentReplyDetail {
+  margin-right: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: #00000014;
+  border-radius: 5px;
+}
+
+.commentText {
+  margin-top: 0.3rem;
+  letter-spacing: normal;
+}
+
+.commentActionContainer {
+  margin: 0.4rem;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #00000099;
+}
+
+.commentActionbtn:hover {
+  color: var(--primary-blue);
+  cursor: pointer;
+}
+
+.commentForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.commentInputWrapper {
+  width: 100%;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 25px;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.commentInput {
+  width: calc(100% - 2rem);
+  line-height: 1.2rem;
+  min-height: 0;
+  border: none;
+  resize: none;
+}
+
+.commentInput:focus {
+  outline: none;
+}
+
+.postFormContainer {
+  background: var(--white);
+  padding: 1rem;
+  width: 525px;
+}
+
+.postFormContainer h3 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.postFormContainer b {
+  color: var(--primary-blue);
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.postEditor {
+  min-height: 5rem;
+  width: 100%;
+}
+
+.postEditor:focus {
+  outline: none;
+}
+
+.postEditor:empty:before {
+  content: attr(data-placeholder);
+  color: #00000099;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.postSubmitBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+  border: 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15px;
+}
+
+.postSubmitBtn:hover {
+  background: #004182;
+  cursor: pointer;
+}
+
+.postSubmitBtn:disabled {
+  background: var(--text-dark-gray);
+}
+
+.imagePreviewContainer {
+  position: relative;
+}
+
+.imagePreviewContainer span {
+  position: absolute;
+  top: 0.5rem;
+  right: 0rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.previewImg {
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
